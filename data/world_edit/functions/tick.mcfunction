@@ -1,0 +1,1 @@
+execute if score @p build matches 1 as @e[type=armor_stand] run function world_edit:hs/y
