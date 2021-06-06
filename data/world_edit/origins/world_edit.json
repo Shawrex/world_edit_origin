@@ -1,0 +1,9 @@
+{
+    "powers": [
+			"world_edit:stick_use",
+			"world_edit:selector"
+    ],
+    "icon": "minecraft:grass_block",
+    "order": 4,
+    "impact": 1
+}

@@ -1,0 +1,88 @@
+{
+	"type": "origins:multiple",
+	"turn_on": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:if_else_list",
+			"actions": [
+				{
+					"condition": {
+						"type": "origins:and",
+						"conditions": [
+							{
+								"type": "origins:command",
+								"command": "execute if data entity @s SelectedItem.tag{world_edit_not_active:1}",
+								"comparison": "==",
+								"compare_to": 1
+							},
+							{      
+								"type": "origins:sneaking"
+							}
+						]
+					},
+					"action": {
+						"type": "origins:and",
+						"actions": [
+							{
+								"type": "origins:execute_command",
+								"command": "function world_edit:stick/on"
+							},
+							{    
+								"type": "origins:change_resource",
+								"resource": "*:*_resource_world_edit",
+								"change": 1
+							}
+						]
+					}
+				},
+				{
+					"condition": {
+						"type": "origins:and",
+						"conditions": [
+							{
+								"type": "origins:command",
+								"command": "execute if data entity @s SelectedItem.tag{world_edit_active:1}",
+								"comparison": "==",
+								"compare_to": 1
+							},
+							{      
+								"type": "origins:sneaking"
+							}
+						]
+					},
+					"action": {
+						"type": "origins:and",
+						"actions": [
+							{
+								"type": "origins:execute_command",
+								"command": "function world_edit:stick/off"
+							},
+							{    
+								"type": "origins:change_resource",
+								"resource": "*:*_resource_world_edit",
+								"change": -1
+							}
+						]
+					}
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.use",
+			"continuous": false
+		}
+	},
+	
+	"resource_world_edit": {
+		"type": "origins:resource",
+    "min": 0,
+    "max": 1,
+    "hud_render": {
+        "should_render": true
+    }
+	}
+}

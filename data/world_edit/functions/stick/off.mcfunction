@@ -1,0 +1,1 @@
+replaceitem entity @s weapon.mainhand stick{display:{Name:'{"text":"World edit wand (not-active)","color":"red","bold":true}',Lore:['{"text":"Shift right click to activate","color":"white"}']},world_edit_not_active:1} 1
